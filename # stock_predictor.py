@@ -12,7 +12,7 @@ ticker = input("Enter stock symbol (e.g., AAPL, TCS.NS): ").strip()
 
 # 2. Download historical data
 print(f"\n Downloading data for {ticker} ...")
-data = yf.download(ticker, start='2018-01-01', end='2023-01-01')
+data = yf.download(ticker, start='2018-01-01', end='2025-01-01')
 # Check if data was fetched
 if data.empty:
     print(" Failed to fetch data. Please check the stock symbol.")
@@ -44,9 +44,10 @@ print("R^2 Score:", r2_score(y_test, y_pred))
 plt.figure(figsize=(12,6))
 plt.scatter(X_test, y_test, color='blue', label='Actual Price')
 plt.plot(X_test, y_pred, color='red', linewidth=2, label='Predicted Price')
-plt.xlabel('Days since 2018')
+plt.xlabel('Days since 2025')
 plt.ylabel(f'{ticker} Stock Closing Price')
 plt.title(f'{ticker} Stock Price Prediction using Linear Regression')
 plt.legend()
 plt.grid(True)
 plt.show()
+
